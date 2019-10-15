@@ -11,7 +11,8 @@ const Movie = (props) => {
   // countMovie++;  
   
   const [movie, setMovie] = useState({});
- 
+  
+
   useEffect(() => {
     // const id = 1;
     const id = props.match.params.bananaID;
@@ -36,6 +37,7 @@ const Movie = (props) => {
   //   const addToSavedList = props.addToSavedList;
   //   addToSavedList(movie)
   // }
+
 
   // console.log("In Movie function right before the if statment and its movie object is:",movie);
 
@@ -64,7 +66,10 @@ const Movie = (props) => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      {/* <div className="save-button" >Save</div> */}
+      {/* <div className="save-button" onClick={props.addToSavedList(movie)}>Save</div> */}
+      {/* <div className="save-button" onClick={ () => saveMovie(movie) }>Save</div> */}
+      <div className="save-button" onClick={ () => props.addToSavedList(movie) }>Save</div>
     </div>
   );
 }
